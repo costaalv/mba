@@ -1,0 +1,999 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>MBA - Ciência de Dados - 2023 &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/intro';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Aula 1" href="1-ICD-Introducao_Ciencia_%20de_Dados.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <header>
+  
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+    </div>
+  
+  </header>
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    MBA - Ciência de Dados - 2023
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">1. ICD - Introdução à Ciência de Dados</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="1-ICD-Introducao_Ciencia_%20de_Dados.html">Aula 1</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2. PCD - Programação para Ciência de dados</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="2-PCD-Programacao_para_Ciencia_de_dados.html"><span style="color:blue">Python Parte I</span></a></li>
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">3. AD - Aprendizado Dinâmico</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="3-AD-Aprendizado_dinamico.html">Aprendizado Dinâmico</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">4. TACTD - Técnicas Avancadas</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="4-TACTD-Tecnicas_avancadas.html"><span style="color:darkred">Dados estruturados e não estruturados e problemas típicos em bases de dados</span></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">5. AM - Aprendizado de Máquina</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="5-AM-Aprendizado_de_maquina.html">Prática 1: Visão Geral da Biblioteca Sklearn</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">5.1 AM - Slides</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="5.1-AM-Slides.html">5.1-AM-Slides</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">6. ECD - Estatística</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="6-ECD-Estatistica.html">Estatística para Ciência de Dados</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">7. ADBPMP - DW</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="7-ADBPMP-DW.html"><span style="color:blue">Análise de Dados com Base em Processamento Massivo em Paralelo</span></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">7.1 ADBPMP - Slides + ASs</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="7.1-ADBPMP-Slides%2BASs.html">7.1-ADBPMP-Slides+ASs</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">8. RNAP - Redes Neurais</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="8-RNAP-Redes_neurais.html">Redes Neurais e Aprendizado Profundo</a></li>
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">9. Revisões</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="9-REVISOES.html">1 - APRENDIZADO DE MÁQUINA - AM</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/content/intro.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>MBA - Ciência de Dados - 2023</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="mba-ciencia-de-dados-2023">
+<h1>MBA - Ciência de Dados - 2023<a class="headerlink" href="#mba-ciencia-de-dados-2023" title="Permalink to this heading">#</a></h1>
+<p>Jupyter Book simples contendo todo o conteúdo do curso.</p>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">1. ICD - Introdução à Ciência de Dados</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="1-ICD-Introducao_Ciencia_%20de_Dados.html">Aula 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1-ICD-Introducao_Ciencia_%20de_Dados.html#bibliotecas-importantes">Bibliotecas importantes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1-ICD-Introducao_Ciencia_%20de_Dados.html#aula-2">Aula 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1-ICD-Introducao_Ciencia_%20de_Dados.html#tratamento-dos-dados">Tratamento dos dados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1-ICD-Introducao_Ciencia_%20de_Dados.html#estatistica-descritiva">Estatística descritiva</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1-ICD-Introducao_Ciencia_%20de_Dados.html#aula-3">Aula 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1-ICD-Introducao_Ciencia_%20de_Dados.html#modelos-de-regressao">Modelos de regressão</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1-ICD-Introducao_Ciencia_%20de_Dados.html#aula-4">Aula 4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1-ICD-Introducao_Ciencia_%20de_Dados.html#knn-regressao-logistica-e-naive-bayes">knn, Regressão Logistica e Naive Bayes.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1-ICD-Introducao_Ciencia_%20de_Dados.html#aula-5">Aula 5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1-ICD-Introducao_Ciencia_%20de_Dados.html#arvores-e-avaliacao">Árvores e avaliação</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1-ICD-Introducao_Ciencia_%20de_Dados.html#aula-6">Aula 6</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1-ICD-Introducao_Ciencia_%20de_Dados.html#selecao-e-ajuste-de-modelos">Seleção e ajuste de modelos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1-ICD-Introducao_Ciencia_%20de_Dados.html#aula-7">Aula 7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1-ICD-Introducao_Ciencia_%20de_Dados.html#clustering">Clustering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1-ICD-Introducao_Ciencia_%20de_Dados.html#aula-8">Aula 8</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1-ICD-Introducao_Ciencia_%20de_Dados.html#projeto-de-ciencia-de-dados">Projeto de Ciência de Dados</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2. PCD - Programação para Ciência de dados</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="2-PCD-Programacao_para_Ciencia_de_dados.html"><span style="color:blue">Python Parte I</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="2-PCD-Programacao_para_Ciencia_de_dados.html#o-que-e-python">O que é Python?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2-PCD-Programacao_para_Ciencia_de_dados.html#variaveis-e-atribuicao">Variáveis e atribuição</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2-PCD-Programacao_para_Ciencia_de_dados.html#tipos-de-dados">Tipos de dados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2-PCD-Programacao_para_Ciencia_de_dados.html#estruturas-de-controle">Estruturas de controle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2-PCD-Programacao_para_Ciencia_de_dados.html#transformacoes-e-agregacoes">Transformações e Agregações</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">3. AD - Aprendizado Dinâmico</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="3-AD-Aprendizado_dinamico.html">Aprendizado Dinâmico</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3-AD-Aprendizado_dinamico.html#indice">Índice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3-AD-Aprendizado_dinamico.html#aula-1-series-temporais">Aula 1.    Séries temporais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3-AD-Aprendizado_dinamico.html#conceitos-basicos">Conceitos básicos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3-AD-Aprendizado_dinamico.html#tendencia-e-sazonalidade">Tendência e Sazonalidade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3-AD-Aprendizado_dinamico.html#suavizacao-e-alisamento-exponencial">Suavização e Alisamento exponencial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3-AD-Aprendizado_dinamico.html#pratica-1">Prática 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3-AD-Aprendizado_dinamico.html#metodos-de-suavizacao-de-holt-e-holt-winters">Métodos de Suavização de Holt e Holt-Winters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3-AD-Aprendizado_dinamico.html#id9">Métodos de Suavização de Holt e Holt-Winters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3-AD-Aprendizado_dinamico.html#series-estacionarias">Séries estacionárias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3-AD-Aprendizado_dinamico.html#pratica-2">Prática 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3-AD-Aprendizado_dinamico.html#funcoes-de-autocovariancia-e-autocorrelacao">Funções de Autocovariância e Autocorrelação</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3-AD-Aprendizado_dinamico.html#representacao-grafica-da-autocorrelacao">Representação gráfica da autocorrelação</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3-AD-Aprendizado_dinamico.html#modelos-ar-ma-arma-arima">Modelos AR, MA, ARMA, ARIMA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3-AD-Aprendizado_dinamico.html#modelos-arima-p-d-q">Modelos ARIMA (p,d,q)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3-AD-Aprendizado_dinamico.html#pratica-3">Prática 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3-AD-Aprendizado_dinamico.html#modelos-arima-sarima-diagnostico">Modelos ARIMA, SARIMA. Diagnóstico.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3-AD-Aprendizado_dinamico.html#id41">Modelos ARIMA (p,d,q)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3-AD-Aprendizado_dinamico.html#modelos-sarima-p-d-q-x-p-d-q-m">Modelos SARIMA (p,d,q)x(P, D,Q)m</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3-AD-Aprendizado_dinamico.html#pratica-4">Prática 4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3-AD-Aprendizado_dinamico.html#modelos-de-espaco-de-estado">Modelos de espaço de estado</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3-AD-Aprendizado_dinamico.html#pratica-5">Prática 5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3-AD-Aprendizado_dinamico.html#previsao-de-series-temporais-metodo-theta-e-expansoes">Previsão de séries temporais: Método Theta e expansões</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3-AD-Aprendizado_dinamico.html#pratica-6">Prática 6</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3-AD-Aprendizado_dinamico.html#redes-dinamicas">Redes dinâmicas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3-AD-Aprendizado_dinamico.html#avaliacao-do-erro">Avaliação do erro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3-AD-Aprendizado_dinamico.html#voce-pode-salvar-suas-previsoes">Você pode salvar suas previsões</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3-AD-Aprendizado_dinamico.html#pratica-7">Prática 7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3-AD-Aprendizado_dinamico.html#analise-de-sobrevivencia">Análise de Sobrevivência</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3-AD-Aprendizado_dinamico.html#pratica-8">Prática 8</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3-AD-Aprendizado_dinamico.html#pratica-02-09-2023">Prática   02/09/2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3-AD-Aprendizado_dinamico.html#previsao-do-numero-de-mortes-por-covid-19-no-brasil">Previsão do número de mortes por Covid-19 no Brasil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3-AD-Aprendizado_dinamico.html#id49">Prática 8</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">4. TACTD - Técnicas Avancadas</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="4-TACTD-Tecnicas_avancadas.html"><span style="color:darkred">Dados estruturados e não estruturados e problemas típicos em bases de dados</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="4-TACTD-Tecnicas_avancadas.html#dados-nao-estruturados">1. Dados não estruturados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4-TACTD-Tecnicas_avancadas.html#dados-estruturados">2. Dados estruturados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4-TACTD-Tecnicas_avancadas.html#resumo-e-consideracoes-finais">3. Resumo e considerações finais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4-TACTD-Tecnicas_avancadas.html#span-style-color-darkred-problemas-tipicos-em-bases-de-dados-informacoes-faltantes-span"><span style="color:darkred">Problemas típicos em bases de dados: Informações faltantes</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="4-TACTD-Tecnicas_avancadas.html#problemas-tipicos-em-bases-de-dados">Problemas típicos em bases de dados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4-TACTD-Tecnicas_avancadas.html#informacoes-faltantes-missing-data">Informações faltantes (<em>missing data</em>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4-TACTD-Tecnicas_avancadas.html#id1">Resumo e considerações finais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4-TACTD-Tecnicas_avancadas.html#span-style-color-darkred-outliers-ruido-e-dados-incorretos-erros-span"><span style="color:darkred">Outliers, ruído e dados incorretos/erros</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="4-TACTD-Tecnicas_avancadas.html#erros">Erros</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4-TACTD-Tecnicas_avancadas.html#outliers"><em>Outliers</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="4-TACTD-Tecnicas_avancadas.html#ruido">Ruído</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4-TACTD-Tecnicas_avancadas.html#resumo">Resumo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4-TACTD-Tecnicas_avancadas.html#span-style-color-darkred-desbalanceamento-e-redundancia-span"><span style="color:darkred">Desbalanceamento e Redundância</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="4-TACTD-Tecnicas_avancadas.html#redundancia">Redundância</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4-TACTD-Tecnicas_avancadas.html#id2">Resumo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4-TACTD-Tecnicas_avancadas.html#span-style-color-darkred-pipeline-geral-de-coleta-e-tratamento-de-dados-span"><span style="color:darkred">Pipeline geral de coleta e tratamento de dados</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="4-TACTD-Tecnicas_avancadas.html#pipeline-geral">Pipeline geral</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4-TACTD-Tecnicas_avancadas.html#pipeline-geral-de-pre-processamento">Pipeline geral de pré-processamento</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4-TACTD-Tecnicas_avancadas.html#span-style-color-darkred-modulo-i-span"><span style="color:darkred">Módulo I</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="4-TACTD-Tecnicas_avancadas.html#exercicio-9">Exercício 9)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4-TACTD-Tecnicas_avancadas.html#exercicio-10">Exercício 10)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4-TACTD-Tecnicas_avancadas.html#span-style-color-darkred-avaliacao-span"><span style="color:darkred">Avaliação</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="4-TACTD-Tecnicas_avancadas.html#questao-5">Questão 5)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4-TACTD-Tecnicas_avancadas.html#span-style-color-darkred-redundancia-dados-nao-informativos-ou-irrelevantes-span"><span style="color:darkred">Redundância: dados não informativos ou irrelevantes</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="4-TACTD-Tecnicas_avancadas.html#redundancia-em-dados">Redundância em dados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4-TACTD-Tecnicas_avancadas.html#dados-duplicados-ou-constantes">Dados duplicados ou constantes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4-TACTD-Tecnicas_avancadas.html#atributos-simetricos-e-correlacionados">Atributos simétricos e correlacionados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4-TACTD-Tecnicas_avancadas.html#span-style-color-darkred-deteccao-e-remocao-de-outliers-span"><span style="color:darkred">Detecção e remoção de outliers</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="4-TACTD-Tecnicas_avancadas.html#detectando-outliers">Detectando outliers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4-TACTD-Tecnicas_avancadas.html#span-style-color-darkred-informacoes-faltantes-span"><span style="color:darkred">Informações faltantes</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="4-TACTD-Tecnicas_avancadas.html#informacoes-faltantes">Informações faltantes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4-TACTD-Tecnicas_avancadas.html#preenchendo-dados-faltantes">Preenchendo dados faltantes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4-TACTD-Tecnicas_avancadas.html#dados-desbalanceados">Dados Desbalanceados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4-TACTD-Tecnicas_avancadas.html#metodos-de-tratamento-de-desbalanceamento">Métodos de tratamento de desbalanceamento</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4-TACTD-Tecnicas_avancadas.html#calculando-pca-em-python">Calculando PCA em Python</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">5. AM - Aprendizado de Máquina</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="5-AM-Aprendizado_de_maquina.html">Prática 1: Visão Geral da Biblioteca Sklearn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5-AM-Aprendizado_de_maquina.html#pratica-2-tarefas-de-aprendizado-de-maquina">Prática 2: Tarefas de Aprendizado de Máquina</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5-AM-Aprendizado_de_maquina.html#pratica-3-case-classificacao-de-cancer-por-meio-de-microrna">Prática 3 - Case: Classificação de Câncer por meio de microRNA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5-AM-Aprendizado_de_maquina.html#pratica-4-classificacao-de-medicamentos-usando-arvore-de-decisao">Prática 4: Classificação de medicamentos usando árvore de decisão</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5-AM-Aprendizado_de_maquina.html#id3">1. Leitura dos Dados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5-AM-Aprendizado_de_maquina.html#id4">2. Análise Exploratória dos Dados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5-AM-Aprendizado_de_maquina.html#modelagem-avaliacao">3. Modelagem &amp; Avaliação</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5-AM-Aprendizado_de_maquina.html#tratando-dados-categoricos">3.2 Tratando Dados Categóricos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5-AM-Aprendizado_de_maquina.html#modelando-uma-arvore-de-decisao">3.2 Modelando uma árvore de decisão</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5-AM-Aprendizado_de_maquina.html#pratica-5a-predicao-de-abandono-de-produto-de-credito-usando-o-algoritmo-support-vector-machine">Prática 5a: Predição de abandono de produto de crédito usando o algoritmo Support Vector Machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5-AM-Aprendizado_de_maquina.html#id7">1. Leitura dos Dados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5-AM-Aprendizado_de_maquina.html#id8">2. Análise Exploratória dos Dados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5-AM-Aprendizado_de_maquina.html#id9">3. Modelagem &amp; Avaliação</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5-AM-Aprendizado_de_maquina.html#modelando-com-svm">3.2 Modelando com SVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5-AM-Aprendizado_de_maquina.html#id11">Avaliação Experimental</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5-AM-Aprendizado_de_maquina.html#mba-em-ciencia-de-dados">MBA em Ciência de Dados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5-AM-Aprendizado_de_maquina.html#pratica-5b-predicao-de-abandono-de-produto-de-credito-usando-o-algoritmo-multilayer-perceptron">Prática 5b: Predição de abandono de produto de crédito usando o algoritmo Multilayer Perceptron</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5-AM-Aprendizado_de_maquina.html#id14">1. Leitura dos Dados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5-AM-Aprendizado_de_maquina.html#id15">2. Análise Exploratória dos Dados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5-AM-Aprendizado_de_maquina.html#id16">3. Modelagem &amp; Avaliação</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5-AM-Aprendizado_de_maquina.html#modelando-com-mlp">3.2 Modelando com MLP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5-AM-Aprendizado_de_maquina.html#id18">Avaliação Experimental</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5-AM-Aprendizado_de_maquina.html#pratica-6-usando-algoritmos-de-ensemble-em-um-problema-de-regressao">Prática 6: Usando Algoritmos de Ensemble em um Problema de Regressão</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5-AM-Aprendizado_de_maquina.html#modelagem-avaliacao-com-ensembles">3. Modelagem &amp; Avaliação com Ensembles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5-AM-Aprendizado_de_maquina.html#modelando-com-random-forest-e-gradient-boosting">3.2 Modelando com Random Forest e Gradient Boosting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5-AM-Aprendizado_de_maquina.html#id24">Avaliação Experimental</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">5.1 AM - Slides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="5.1-AM-Slides.html">5.1-AM-Slides</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">6. ECD - Estatística</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="6-ECD-Estatistica.html">Estatística para Ciência de Dados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6-ECD-Estatistica.html#aula-1-visualizacao-de-dados-analise-descritiva">Aula 1.    Visualização de dados - Análise descritiva</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6-ECD-Estatistica.html#pratica">Prática</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6-ECD-Estatistica.html#aula-2-probabilidades">Aula 2: Probabilidades</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6-ECD-Estatistica.html#aula-3-modelos-probabilisticos">Aula 3: Modelos Probabilísticos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6-ECD-Estatistica.html#distribuicao-normal-e-teoremas-limites">Distribuição Normal e Teoremas Limites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6-ECD-Estatistica.html#exercicios">Exercícios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6-ECD-Estatistica.html#aula-5-teste-de-hipoteses">Aula 5 - Teste de hipóteses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6-ECD-Estatistica.html#valor-p">Valor p</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6-ECD-Estatistica.html#aula-6-inferencia-bayesiana">Aula 6 - Inferência Bayesiana</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6-ECD-Estatistica.html#pratica-1">Prática 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6-ECD-Estatistica.html#pratica-2">Prática 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6-ECD-Estatistica.html#aula-7-modelos-de-regressao">Aula 7 - Modelos de regressão</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6-ECD-Estatistica.html#modelos-de-regressao">Modelos de regressão</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6-ECD-Estatistica.html#modelos-lineares">Modelos lineares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6-ECD-Estatistica.html#selecao-de-modelos">Seleção de modelos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6-ECD-Estatistica.html#id16">Prática 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6-ECD-Estatistica.html#id18">Prática 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6-ECD-Estatistica.html#aula-8-modelos-lineares-generalizados">Aula 8 - Modelos Lineares Generalizados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6-ECD-Estatistica.html#id26">Modelos lineares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6-ECD-Estatistica.html#modelo-linear-generalizado-mlg">Modelo linear generalizado (MLG)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6-ECD-Estatistica.html#a-qualidade-do-ajuste">A qualidade do ajuste</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6-ECD-Estatistica.html#modelos-lineares-generalizados">Modelos Lineares generalizados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6-ECD-Estatistica.html#id30">Prática 1</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">7. ADBPMP - DW</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="7-ADBPMP-DW.html"><span style="color:blue">Análise de Dados com Base em Processamento Massivo em Paralelo</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="7-ADBPMP-DW.html#span-style-color-blue-aula-03-processo-de-etl-elt-span"><span style="color:blue">Aula 03: Processo de ETL/ELT</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="7-ADBPMP-DW.html#span-style-color-blue-aula-03-lista-exercicios-processo-de-etl-elt-span"><span style="color:blue">Aula 03: Lista exercícios - Processo de ETL/ELT</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="7-ADBPMP-DW.html#span-style-color-blue-aula-03-plantao-edesio-processo-de-etl-elt-span"><span style="color:blue">Aula 03: Plantão Edesio - Processo de ETL/ELT</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="7-ADBPMP-DW.html#span-style-color-blue-aula-05-consultas-olap-span"><span style="color:blue">Aula 05: Consultas OLAP</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="7-ADBPMP-DW.html#introducao">1 Introdução</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7-ADBPMP-DW.html#carregamento-das-tabelas-de-dimensao-e-das-tabelas-de-fatos">2 Carregamento das Tabelas de Dimensão e das Tabelas de Fatos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7-ADBPMP-DW.html#execucao-de-consultas-com-foco-nas-operacoes-olap">3 Execução de Consultas com Foco nas Operações OLAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7-ADBPMP-DW.html#execucao-de-consultas-com-foco-na-tomada-de-decisao">3 Execução de Consultas com Foco na Tomada de Decisão</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7-ADBPMP-DW.html#span-style-color-blue-aula-05-lista-de-exercicios-consultas-olap-span"><span style="color:blue">Aula 05: Lista de exercícios - Consultas OLAP</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="7-ADBPMP-DW.html#id16">1 Introdução</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7-ADBPMP-DW.html#id21">2 Carregamento das Tabelas de Dimensão e das Tabelas de Fatos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7-ADBPMP-DW.html#id24">3 Execução de Consultas com Foco nas Operações OLAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7-ADBPMP-DW.html#id29">3 Execução de Consultas com Foco na Tomada de Decisão</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7-ADBPMP-DW.html#exercicios">4 Exercícios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7-ADBPMP-DW.html#analise-de-dados-com-base-em-processamento-massivo-em-paralelo">Análise de Dados com Base em Processamento Massivo em Paralelo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7-ADBPMP-DW.html#aula-05-plantao-leonardo-pipeline-utilizando-luigi">Aula 05 - Plantão Leonardo - Pipeline utilizando Luigi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7-ADBPMP-DW.html#span-style-color-blue-aula-06-processamento-paralelo-e-distribuido-span"><span style="color:blue">Aula 06: Processamento Paralelo e Distribuído</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="7-ADBPMP-DW.html#persistencia-dos-rdds">5 Persistência dos RDDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7-ADBPMP-DW.html#aula-06-lista-de-exercicios-processamento-paralelo-e-distribuido">Aula 06 - Lista de Exercícios - Processamento Paralelo e Distribuído</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7-ADBPMP-DW.html#id44">1 Introdução</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7-ADBPMP-DW.html#apache-spark-cluster-instalacao-e-configuracao">2 Apache Spark Cluster: instalação e configuração</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7-ADBPMP-DW.html#carregamento-dos-dados-da-aplicacao-da-bi-solutions">3 Carregamento dos Dados da Aplicação da BI Solutions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7-ADBPMP-DW.html#id45"><strong>Exercícios</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="7-ADBPMP-DW.html#span-style-color-blue-aula-07-consultas-olap-usando-spark-sql-span"><span style="color:blue">Aula 07: Consultas OLAP usando Spark SQL</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="7-ADBPMP-DW.html#constelacao-de-fatos-da-bi-solutions">2 Constelação de Fatos da BI Solutions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7-ADBPMP-DW.html#id56">3 Apache Spark Cluster</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7-ADBPMP-DW.html#preparacao-dos-dados">4 Preparação dos Dados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7-ADBPMP-DW.html#id59">5 Execução de Consultas com Foco nas Operações OLAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7-ADBPMP-DW.html#id64">6 Execução de Consultas com Foco na Tomada de Decisão</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7-ADBPMP-DW.html#id68"><span style="color:blue">Aula 07: Consultas OLAP usando Spark SQL</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="7-ADBPMP-DW.html#id71">2 Constelação de Fatos da BI Solutions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7-ADBPMP-DW.html#id75">3 Apache Spark Cluster</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7-ADBPMP-DW.html#id78">4 Preparação dos Dados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7-ADBPMP-DW.html#id81">5 Execução de Consultas com Foco nas Operações OLAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7-ADBPMP-DW.html#id87">6 Execução de Consultas com Foco na Tomada de Decisão</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7-ADBPMP-DW.html#id91">7 Exercícios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7-ADBPMP-DW.html#span-style-color-blue-aula-08-explorando-o-modulo-pyspark-sql-span"><span style="color:blue">Aula 08: Explorando o Módulo pyspark.sql</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="7-ADBPMP-DW.html#id106">3 Apache Spark Cluster</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7-ADBPMP-DW.html#geracao-dos-dataframes-da-bi-solutions">4 Geração dos DataFrames da BI Solutions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7-ADBPMP-DW.html#id111">6 Execução de Consultas com Foco nas Operações OLAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7-ADBPMP-DW.html#id116">7 Execução de Consultas com Foco na Tomada de Decisão</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7-ADBPMP-DW.html#span-style-color-blue-aula-08-lista-de-exercicios-explorando-o-modulo-pyspark-sql-span"><span style="color:blue"> Aula 08 - Lista de exercícios - Explorando o Módulo pyspark.sql</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="7-ADBPMP-DW.html#id123">3 Apache Spark Cluster</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7-ADBPMP-DW.html#id126">4 Geração dos DataFrames da BI Solutions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7-ADBPMP-DW.html#id163">6 Execução de Consultas com Foco nas Operações OLAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7-ADBPMP-DW.html#id172">7 Execução de Consultas com Foco na Tomada de Decisão</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7-ADBPMP-DW.html#id176">8 Exercícios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7-ADBPMP-DW.html#span-style-color-blue-avaliacao-final-notebook-span"><span style="color:blue">Avaliação Final - Notebook </span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="7-ADBPMP-DW.html#id191">3 Apache Spark Cluster</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7-ADBPMP-DW.html#geracao-dos-dataframes-em-pandas-da-bi-solutions">4 Geração dos DataFrames em Pandas da BI Solutions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7-ADBPMP-DW.html#geracao-dos-dataframes-em-spark-da-bi-solutions">5 Geração dos DataFrames em Spark da BI Solutions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7-ADBPMP-DW.html#respostas">6 Respostas</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">7.1 ADBPMP - Slides + ASs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="7.1-ADBPMP-Slides%2BASs.html">7.1-ADBPMP-Slides+ASs</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">8. RNAP - Redes Neurais</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="8-RNAP-Redes_neurais.html">Redes Neurais e Aprendizado Profundo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="8-RNAP-Redes_neurais.html#implementacao-com-tensorflow-e-keras">Implementação com Tensorflow e Keras</a></li>
+<li class="toctree-l1"><a class="reference internal" href="8-RNAP-Redes_neurais.html#parte-1-exercicios-essenciais">Parte 1 - Exercícios Essenciais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="8-RNAP-Redes_neurais.html#perceptron-e-seu-treinamento">Perceptron e seu Treinamento</a></li>
+<li class="toctree-l1"><a class="reference internal" href="8-RNAP-Redes_neurais.html#id11">Implementação com Tensorflow e Keras</a></li>
+<li class="toctree-l1"><a class="reference internal" href="8-RNAP-Redes_neurais.html#compilando-modelos">3. Compilando Modelos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="8-RNAP-Redes_neurais.html#executando-o-treinamento">4. Executando o treinamento</a></li>
+<li class="toctree-l1"><a class="reference internal" href="8-RNAP-Redes_neurais.html#preparando-dataset">1. Preparando Dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="8-RNAP-Redes_neurais.html#definindo-rede-neural">2. Definindo Rede Neural</a></li>
+<li class="toctree-l1"><a class="reference internal" href="8-RNAP-Redes_neurais.html#explorando-diferentes-estrategias-para-o-learning-rate">3. Explorando Diferentes Estratégias para o Learning Rate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="8-RNAP-Redes_neurais.html#carregando-dataset-de-texto">1. Carregando Dataset de texto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="8-RNAP-Redes_neurais.html#carregar-modelo-pre-treinado-e-configura-lo">3. Carregar modelo pré-treinado e configurá-lo</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">9. Revisões</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="9-REVISOES.html">1 - APRENDIZADO DE MÁQUINA - AM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9-REVISOES.html#pratica-1-visao-geral-da-biblioteca-sklearn">Prática 1: Visão Geral da Biblioteca Sklearn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9-REVISOES.html#pratica-2-tarefas-de-aprendizado-de-maquina">Prática 2: Tarefas de Aprendizado de Máquina</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9-REVISOES.html#pratica-3-case-classificacao-de-cancer-por-meio-de-microrna">Prática 3 - Case: Classificação de Câncer por meio de microRNA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9-REVISOES.html#pratica-4-classificacao-de-medicamentos-usando-arvore-de-decisao">Prática 4: Classificação de medicamentos usando árvore de decisão</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9-REVISOES.html#id3">1. Leitura dos Dados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9-REVISOES.html#id4">2. Análise Exploratória dos Dados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9-REVISOES.html#modelagem-avaliacao">3. Modelagem &amp; Avaliação</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9-REVISOES.html#tratando-dados-categoricos">3.2 Tratando Dados Categóricos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9-REVISOES.html#modelando-uma-arvore-de-decisao">3.2 Modelando uma árvore de decisão</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9-REVISOES.html#pratica-5a-predicao-de-abandono-de-produto-de-credito-usando-o-algoritmo-support-vector-machine">Prática 5a: Predição de abandono de produto de crédito usando o algoritmo Support Vector Machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9-REVISOES.html#id7">1. Leitura dos Dados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9-REVISOES.html#id8">2. Análise Exploratória dos Dados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9-REVISOES.html#id9">3. Modelagem &amp; Avaliação</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9-REVISOES.html#modelando-com-svm">3.2 Modelando com SVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9-REVISOES.html#id11">Avaliação Experimental</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9-REVISOES.html#pratica-5b-predicao-de-abandono-de-produto-de-credito-usando-o-algoritmo-multilayer-perceptron">Prática 5b: Predição de abandono de produto de crédito usando o algoritmo Multilayer Perceptron</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9-REVISOES.html#id14">1. Leitura dos Dados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9-REVISOES.html#id15">2. Análise Exploratória dos Dados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9-REVISOES.html#id16">3. Modelagem &amp; Avaliação</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9-REVISOES.html#modelando-com-mlp">3.2 Modelando com MLP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9-REVISOES.html#id18">Avaliação Experimental</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9-REVISOES.html#pratica-6-usando-algoritmos-de-ensemble-em-um-problema-de-regressao">Prática 6: Usando Algoritmos de Ensemble em um Problema de Regressão</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9-REVISOES.html#modelagem-avaliacao-com-ensembles">3. Modelagem &amp; Avaliação com Ensembles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9-REVISOES.html#modelando-com-random-forest-e-gradient-boosting">3.2 Modelando com Random Forest e Gradient Boosting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9-REVISOES.html#id24">Avaliação Experimental</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9-REVISOES.html#estatistica-ecd">2 - ESTATÍSTICA - ECD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9-REVISOES.html#revisao-de-probabilidade-e-estatistica-classica">Revisão de probabilidade e estatística clássica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9-REVISOES.html#tecnicas-avancadas-tactd">3 - TÉCNICAS AVANÇADAS - TACTD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9-REVISOES.html#dw">4 - DW</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9-REVISOES.html#exemplo-de-consulta-olap">3 Exemplo de Consulta OLAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9-REVISOES.html#redes-neurais-rnap">5 - REDES NEURAIS - RNAP</a></li>
+</ul>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="right-next"
+       href="1-ICD-Introducao_Ciencia_%20de_Dados.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Aula 1</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
